@@ -1,52 +1,48 @@
-@import url("fontawesome-all.min.css");
-
-body, html {
-    background-color: black;
-    height: 100%;
-    margin: 0;
-    scroll-behavior: smooth;
-  }
-/*nav*/
-
-.topnav {
-    overflow: hidden;
-    position: fixed;
-    display:flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 10000;
-}
-  
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  .topnav a:hover {
-    background-color: purple;
-    color: gold;
-  }
-  
-  .topnav a.active {
-    background-color: black;
-    color: gold;
-  }
-
-/*flipcard1 */
-
-.img-div {
+html {
   background-color: black;
-  width: 450px;
-  height: 600px;
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+#main {
+  display: block;
+}
+
+.title {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10000;
+}
+
+.title a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title a:hover {
+  color: gold;
+}
+
+.title a:active {
+  background-color: transparent;
+  color: purple;
+}
+
+#img-div {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
   perspective: 1000px;
-  position: relative;
-  top: 100px;
-  left: 180px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flip-card-inner {
@@ -56,15 +52,17 @@ body, html {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.img-div:hover .flip-card-inner {
+#img-div:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
+
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -77,122 +75,108 @@ body, html {
 }
 
 .flip-card-back {
-  background-color: transparent;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
   color: white;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   transform: rotateY(180deg);
 }
 
-
-/*flipcard2 */
-
-.img-div2 {
-    background-color: black;
-    width: 450px;
-    height: 600px;
-    perspective: 1000px;
-    position: relative;
-    top: 100px;
-    right: 180px;
-  }
-  
-  .flip-card-inner2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  .img-div2:hover .flip-card-inner2 {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front2, .flip-card-back2 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-card-front2{
-    background-color: black;
-    color: black;
-  }
-  
-  .flip-card-back2 {
-    background-color: transparent;
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    transform: rotateY(180deg);
-  }
-    
-#kobe{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+#image {
+  padding: 25px;
+  height: 750px;
 }
 
-#highlight{
-    position: relative;
-    top: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 864px;
-    width: 1536px;
-}
 
-#mamba{
+#tribute-info {
   position: relative;
-  top: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  top: 150px;
+  background-color: transparent;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top: 150px;
 }
 
-#tribute-info{
-  position: relative;
+#tribute-info a {
+  color: #f2f2f2;
+  text-decoration: none;
+
+}
+
+
+#tribute-info a:hover {
+  color: gold;
+}
+
+#tribute-info a:active {
+  background-color: transparent;
+  color: purple;
+}
+
+#stats {
+  position: fixed;
   top: 100px;
+  left: 800px;
+  height: auto;
+  width: 600px;
+}
+
+#tribute-link {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#tribute-link:hover {
+  color: gold;
+}
+
+#tribute-link:active {
+  background-color: transparent;
+  color: purple;
+}
+
+#why-kobe {
+  position: absolute;
+  background-image: url(images/img7.jpg);
+  background-size: cover;
+  top: 1080px;
+  width: 100%;
+  height: 750px;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: space-evenly;
+  align-self: center;
+  color: snow;
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#pics{
-position: relative;
-top: 400px;
-padding: 100;
+
+#gallery {
+  position: absolute;
+  top: 2000px;
+  padding: 100;
 
 }
-#last{
+
+#last {
   padding-top: 30px;
   width: 50%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
 }
 
-#last:hover{
-margin: auto;
-transform: scale(2);
+
+#last:hover {
+  margin: auto;
+  transform: scale(2);
 }
-
-#tribute-link{
-  display: block;  
-  position: relative;
-    top: 500px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: right;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- }
-
